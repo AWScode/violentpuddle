@@ -82,8 +82,8 @@ reader = new BufferedReader(new FileReader("topics.txt"));
            System.out.println("Hey pal! What would you like to discuss today?(choose: low risk, high risk, not today, or new-topic)");
            Scanner scan = new Scanner (System.in); // creaters new scanner
            String riskLevel = scan.nextLine(); // creates object that is scanned
-           System.out.println(riskLevel);
-           if(riskLevel == "low risk"){
+           
+           if(riskLevel.equals("low risk")){
              System.out.println("Have you heard anything new about " + lowRisk + "?");
              System.out.println("Wow, very interesting. Can we talk more after work?");
            }
@@ -91,11 +91,11 @@ reader = new BufferedReader(new FileReader("topics.txt"));
             System.out.println("How are you feeling about " + highRisk + "?");
             System.out.println("Wow, very interesting. Can we talk more after work?");
            }
-           else if (riskLevel == "new-topic"){
+           else if (riskLevel.equals("new-topic")){
              System.out.println("Have you heard about the new alien civilization?");
              System.out.println("Wow, very interesting. Can we talk more after work?");
            }
-           else if (riskLevel == "not today"){
+           else if (riskLevel.equals("not today")){
              System.out.println("Hey where are you going?");
            }
 
