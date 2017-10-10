@@ -18,7 +18,7 @@ HashMap<String, Integer> wordCountMap = new HashMap<String, Integer>();
 try
        {
   //Creating BufferedReader object
-reader = new BufferedReader(new FileReader("C:sample.txt"));
+reader = new BufferedReader(new FileReader("topics.txt"));
             //Reading the first line into currentLine
             String currentLine = reader.readLine();
 
@@ -82,11 +82,12 @@ reader = new BufferedReader(new FileReader("C:sample.txt"));
            System.out.println("Hey pal! What would you like to discuss today?(choose: low risk, high risk, not today, or new-topic)");
            Scanner scan = new Scanner (System.in); // creaters new scanner
            String riskLevel = scan.nextLine(); // creates object that is scanned
+           System.out.println(riskLevel);
            if(riskLevel == "low risk"){
              System.out.println("Have you heard anything new about " + lowRisk + "?");
              System.out.println("Wow, very interesting. Can we talk more after work?");
            }
-           else if (riskLevel == "high risk"){
+           else if (riskLevel.equals("high risk")){
             System.out.println("How are you feeling about " + highRisk + "?");
             System.out.println("Wow, very interesting. Can we talk more after work?");
            }
