@@ -2,34 +2,33 @@
 import java.util.*; //import the utility class
 import java.util.Scanner; //imports the scanner class
 public class Binary{
-  int i = 0;
-  int remainder =0;
-  int binOne = new int[8]; //Make an array of int for binary 1
-  int binTwo = new int[8]; //Make an array of int for binary 2
-  int binNew = new int[8]; // makes the new array that final binary
-  public static int addBinary(){
-    if(binOne[0].equals(0) && binTwo[0].equals(0)){
-    binNew[0]= 0;
-    else if (binOne[0].equals(1) && binTwo[0].equals(1))
-    binNew[0]= 0;
-    remainder = 1;
-    else binNew = 1;}
-    if (binOne[1].equals(0) && binTwo[1].equals(0)){
-    binNew[1]= 0;
-    else if (binOne[1].equals(1) && binTwo[1].equals(1)&& remainder.equals(1))
-    binNew[0]= 0;
-    remainder = 0;
-    else binNew = 1;}
-
+    long binOne, binTwo;
+    int i = 0, rem = 0;
+    Scanner scan = new Scanner (System.in); // creaters new scanner
+    System.out.println("Please input first binary number:"); //Scanner to get first binary number
+    long binOne = scan.nextInt(); //scans for next int
+    System.out.println("Please input second binary number:");//Scanner to get second binary number
+    long binTwo = scan.nextInt(); //scans for next int
+  public static int addBinary(long binOne, long binTwo, int i, int rem){
+    int[] sum = new int[20];
+    while (binOne !0 || binTwo != 0){
+      sum[i++] = (int)((binOne % 10 + binTwo % 10 + rem)% 2); // takes the binary and puts it into decimal
+      rem = (int)((binOne % 10 + binTwo % 10 + rem)/ 2);
+      binOne = binOne / 10;
+      binTwo = binTwo / 10;
+    }
+    if (rem != 0){
+      sum[i++] = rem; }
+      --i;
   }// method to add the binaries
 
   public static int subtractBinary(){} // method to subtract the binaries
 
+
   public static int multiplyBinary(){} // method to multiply the binaries
 
-  public static int divideBinary(){int binOne, int binTwo} {
+  public static int divideBinary(){int binOne, int binTwo, int i} {
     int quo =0;
-    int i =0;
     while (binOne <= binTwo && binOne > 0){
           binOne <<=1;
           i++;
@@ -44,18 +43,7 @@ public class Binary{
         }
       return quo;
   }  // method to divide the binaries
-
-  public static void main(String [] args){
-
-
-    Scanner scan = new Scanner (System.in); // creaters new scanner
-
-    System.out.println("Please input first binary number:"); //Scanner to get first binary number
-    int binOne = scan.nextInt(); //scans for next int
-
-    System.out.println("Please input second binary number:");//Scanner to get second binary number
-    int binTwo = scan.nextInt(); //scans for next int
-
+public static void main(String [] args){
     System.out.println("Choose (add, subtract, multiply, divide)"); //Scanner to get the arithmetic function wanted
     String atith = scan.nextLine();
 
