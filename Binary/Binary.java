@@ -1,10 +1,11 @@
 //Caitlyn Bell's binary 12/6/2017
-import java.util.*; //import the utility class
 import java.util.Scanner; //imports the scanner class
 public class Binary{
+  public static void main(String [] args){
     long binOne, binTwo;
     int i = 0, rem = 0;
-    Scanner scan = new Scanner (System.in); // creaters new scanner
+    Scanner scan = new Scanner(System.in); // creaters new scannerm
+    System.out.print
     System.out.println("Please input first binary number:"); //Scanner to get first binary number
     long binOne = scan.nextLong(); //scans for next int
     System.out.println("Please input second binary number:");//Scanner to get second binary number
@@ -12,20 +13,30 @@ public class Binary{
   public static long addBinary(long binOne, long binTwo, int i, int rem){
     int[] sum = new int[20];
     while (binOne !0 || binTwo != 0){
-      sum[i++] = (int)((binOne % 10 + binTwo % 10 + rem)% 2); // takes the binary and puts it into decimal
-      rem = (int)((binOne % 10 + binTwo % 10 + rem)/ 2);
+      sum[i++] = (int)((binOne % 10 + binTwo % 10 + rem)% 2); // goes from the last digit to check the sum
+      rem = (int)((binOne % 10 + binTwo % 10 + rem)/ 2); // if it is 1 and 1 then sets it to 0 and carries the 1
       binOne = binOne / 10;
       binTwo = binTwo / 10;
-    }
+    } //this bit is the algorithym for addition(the one we learned in class)
     if (rem != 0){
       sum[i++] = rem; }
       --i;
   }// method to add the binaries
 
-  public static long subtractBinary(){} // method to subtract the binaries
+  public static long subtractBinary(long binOne, long binTwo, int i, int rem){// method to subtract the binaries
+  int[] diff = new int[20];
+  while (binOne !0 || binTwo != 0){
+    diff[i++] = (int)((binOne % 10 + (binTwo* -1) % 10 + rem)% 2); // goes from the last digit to check the sum
+    rem = (int)((binOne % 10 + (binTwo*-1) % 10 + rem)/ 2); // if it is 1 and 1 then sets it to 0 and carries the 1
+    binOne = binOne / 10;
+    binTwo = binTwo / 10;
+  } //this is the inverse of the addition method
+  if (rem != 0){
+    diff[i++] = rem; }
+    --i;
+  }
 
-
-  public static long multiplyBinary(long binOne, long binTwo){
+  public static long multiplyBinary(long binOne, long binTwo, int i, int rem){
   long multiply = 0;
   int digit, factor = 1;
   while (binTwo != 0)
@@ -35,7 +46,7 @@ public class Binary{
    {
     binOne = binOne * factor;
     multiply = addBinary((int) binOne, (int) multiply);
-   } 
+   }
    else
    {
     binOne = binOne * factor;
@@ -45,7 +56,7 @@ public class Binary{
   }
  } // method to multiply the binaries
 
-  public static long divideBinary(){long binOne, long binTwo, int i} {
+  public static long divideBinary(long binOne, long binTwo, int i, int rem) {
     int quo =0;
     while (binOne <= binTwo && binOne > 0){
           binOne <<=1;
@@ -61,7 +72,7 @@ public class Binary{
         }
       return quo;
   }  // method to divide the binaries
-public static void main(String [] args){
+
     System.out.println("Choose (add, subtract, multiply, divide)"); //Scanner to get the arithmetic function wanted
     String atith = scan.nextLine();
 
