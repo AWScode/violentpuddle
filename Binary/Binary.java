@@ -4,16 +4,23 @@ public class Binary{
   long binOne, binTwo;
   int i = 0, rem = 0;
   public static long addBinary(long binOne, long binTwo, int i, int rem){
-    int[] sum = new int[20];
-    while (binOne !0 || binTwo != 0){
-      sum[i++] = (int)((binOne % 10 + binTwo % 10 + rem)% 2); // goes from the last digit to check the sum
-      rem = (int)((binOne % 10 + binTwo % 10 + rem)/ 2); // if it is 1 and 1 then sets it to 0 and carries the 1
-      binOne = binOne / 10;
-      binTwo = binTwo / 10;
-    } //this bit is the algorithym for addition(the one we learned in class)
-    if (rem != 0){
-      sum[i++] = rem; }
-      --i;
+    while (binary1 != 0 || binary2 != 0)
+  {
+   sum[i++] = (int)((binary1 % 10 + binary2 % 10 + remainder) % 2);
+   remainder = (int)((binary1 % 10 + binary2 % 10 + remainder) / 2);
+   binary1 = binary1 / 10;
+   binary2 = binary2 / 10;
+  }
+  if (remainder != 0) {
+   sum[i++] = remainder;
+  }
+  --i;
+  System.out.print("Sum of two binary numbers: ");
+  while (i >= 0) {
+   System.out.print(sum[i--]);
+  }
+   System.out.print("\n");
+ }
   }// method to add the binaries
 
   public static long subtractBinary(long a, long b){// method to subtract the binaries
@@ -73,6 +80,7 @@ public class Binary{
     }
     return binary_prod_result;
  } // method to multiply the binaries
+
 
   public static long divideBinary(long a, long b) {
     System.out.println(a + "first val :" + b);
