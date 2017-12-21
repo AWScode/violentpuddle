@@ -4,29 +4,27 @@ public class Binary{
   long binOne, binTwo;
   int i = 0, rem = 0;
   public static long addBinary(long binOne, long binTwo, int i, int rem){
-    while (binary1 != 0 || binary2 != 0)
+    while (binOne != 0 || binTwo != 0)
   {
-   sum[i++] = (int)((binary1 % 10 + binary2 % 10 + remainder) % 2);
-   remainder = (int)((binary1 % 10 + binary2 % 10 + remainder) / 2);
-   binary1 = binary1 / 10;
-   binary2 = binary2 / 10;
+   sum[i++] = (int)((binOne % 10 + binTwo % 10 + rem) % 2);
+   rem = (int)((binOne % 10 + binTwo % 10 + rem) / 2);
+   binOne = binOne / 10;
+   binTwo = binTwo / 10;
   }
-  if (remainder != 0) {
-   sum[i++] = remainder;
+  if (rem != 0) {
+   sum[i++] = rem;
   }
   --i;
   System.out.print("Sum of two binary numbers: ");
   while (i >= 0) {
    System.out.print(sum[i--]);
-  }
-   System.out.print("\n");
  }
   }// method to add the binaries
 
-  public static long subtractBinary(long a, long b){// method to subtract the binaries
+  public static long subtractBinary(long binOne, long binTwo){// method to subtract the binaries
     System.out.println(a + "first val :" + b);
-         int a1 = (int) a;
-         int b1 = (int) b;
+         int a1 = (int) binOne;
+         int b1 = (int) binTwo;
          String s1 = Integer.toString(a1);
          String s2 = Integer.toString(b1);
          int number0 = Integer.parseInt(s1, 2);
@@ -39,39 +37,40 @@ public class Binary{
   }
 
   public static long multiplyBinary(long binOne, long binTwo, int i, int rem){
-    while (binary2 != 0)
+    int digit = 0;
+    while (bintwo != 0)
     {
-     digit = (int)(binary2 % 10);
+     digit = (int)(binTwo % 10);
      if (digit == 1)
      {
-      binary1 = binary1 * factor;
-      multiply = binaryproduct((int) binary1, (int) multiply);
+      binOne = binOne * factor;
+      multiply = binaryproduct((int) binOne, (int) multiply);
      }
      else
      {
-      binary1 = binary1 * factor;
+      binary1 = binTwo * factor;
      }
-     binary2 = binary2 / 10;
+     binTwo = binTwo / 10;
      factor = 10;
     }
     System.out.print("Product of two binary numbers: " + multiply+"\n");
    }
-   static int binaryproduct(int binary1, int binary2)
+   static int binaryproduct(int binOne, int binTwo)
    {
-    int i = 0, remainder = 0;
+    int i = 0, rem = 0;
     int[] sum = new int[20];
     int binary_prod_result = 0;
 
-    while (binary1 != 0 || binary2 != 0)
+    while (binOne != 0 || binTwo != 0)
     {
-     sum[i++] = (binary1 % 10 + binary2 % 10 + remainder) % 2;
-     remainder = (binary1 % 10 + binary2 % 10 + remainder) / 2;
-     binary1 = binary1 / 10;
-     binary2 = binary2 / 10;
+     sum[i++] = (binOne % 10 + binOne % 10 + rem) % 2;
+     remainder = (binOne % 10 + binTwo % 10 + rem) / 2;
+     binOne = binOne / 10;
+     binTwo = binTwo / 10;
     }
-    if (remainder != 0)
+    if (rem != 0)
     {
-     sum[i++] = remainder;
+     sum[i++] = rem;
     }
     --i;
     while (i >= 0)
@@ -82,10 +81,10 @@ public class Binary{
  } // method to multiply the binaries
 
 
-  public static long divideBinary(long a, long b) {
+  public static long divideBinary(long binOne, long binTwo) {
     System.out.println(a + "first val :" + b);
-       int a1 = (int) a;
-       int b1 = (int) b;
+       int a1 = (int) binOne;
+       int b1 = (int) binTwo;
        String s1 = Integer.toString(a1);
        String s2 = Integer.toString(b1);
        int number0 = Integer.parseInt(s1, 2);
