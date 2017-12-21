@@ -1,15 +1,8 @@
 //Caitlyn Bell's binary 12/6/2017
 import java.util.Scanner; //imports the scanner class
 public class Binary{
-  public static void main(String [] args){
-    long binOne, binTwo;
-    int i = 0, rem = 0;
-    Scanner scan = new Scanner(System.in); // creaters new scannerm
-    System.out.print
-    System.out.println("Please input first binary number:"); //Scanner to get first binary number
-    long binOne = scan.nextLong(); //scans for next int
-    System.out.println("Please input second binary number:");//Scanner to get second binary number
-    long binTwo = scan.nextLong(); //scans for next int
+  long binOne, binTwo;
+  int i = 0, rem = 0;
   public static long addBinary(long binOne, long binTwo, int i, int rem){
     int[] sum = new int[20];
     while (binOne !0 || binTwo != 0){
@@ -23,56 +16,86 @@ public class Binary{
       --i;
   }// method to add the binaries
 
-  public static long subtractBinary(long binOne, long binTwo, int i, int rem){// method to subtract the binaries
-  int[] diff = new int[20];
-  while (binOne !0 || binTwo != 0){
-    diff[i++] = (int)((binOne % 10 + (binTwo* -1) % 10 + rem)% 2); // goes from the last digit to check the sum
-    rem = (int)((binOne % 10 + (binTwo*-1) % 10 + rem)/ 2); // if it is 1 and 1 then sets it to 0 and carries the 1
-    binOne = binOne / 10;
-    binTwo = binTwo / 10;
-  } //this is the inverse of the addition method
-  if (rem != 0){
-    diff[i++] = rem; }
-    --i;
+  public static long subtractBinary(long a, long b){// method to subtract the binaries
+    System.out.println(a + "first val :" + b);
+         int a1 = (int) a;
+         int b1 = (int) b;
+         String s1 = Integer.toString(a1);
+         String s2 = Integer.toString(b1);
+         int number0 = Integer.parseInt(s1, 2);
+         int number1 = Integer.parseInt(s2, 2);
+
+         int sum = number0 - number1;
+         String s3 = Integer.toBinaryString(sum);
+
+         return s3;
   }
 
   public static long multiplyBinary(long binOne, long binTwo, int i, int rem){
-  long multiply = 0;
-  int digit, factor = 1;
-  while (binTwo != 0)
-  {
-   digit = (int)(binTwo % 10);
-   if (digit == 1)
-   {
-    binOne = binOne * factor;
-    multiply = addBinary((int) binOne, (int) multiply);
+    while (binary2 != 0)
+    {
+     digit = (int)(binary2 % 10);
+     if (digit == 1)
+     {
+      binary1 = binary1 * factor;
+      multiply = binaryproduct((int) binary1, (int) multiply);
+     }
+     else
+     {
+      binary1 = binary1 * factor;
+     }
+     binary2 = binary2 / 10;
+     factor = 10;
+    }
+    System.out.print("Product of two binary numbers: " + multiply+"\n");
    }
-   else
+   static int binaryproduct(int binary1, int binary2)
    {
-    binOne = binOne * factor;
-   }
-   binTwo = binTwo / 10;
-   factor = 10;
-  }
+    int i = 0, remainder = 0;
+    int[] sum = new int[20];
+    int binary_prod_result = 0;
+
+    while (binary1 != 0 || binary2 != 0)
+    {
+     sum[i++] = (binary1 % 10 + binary2 % 10 + remainder) % 2;
+     remainder = (binary1 % 10 + binary2 % 10 + remainder) / 2;
+     binary1 = binary1 / 10;
+     binary2 = binary2 / 10;
+    }
+    if (remainder != 0)
+    {
+     sum[i++] = remainder;
+    }
+    --i;
+    while (i >= 0)
+    {
+     binary_prod_result = binary_prod_result * 10 + sum[i--];
+    }
+    return binary_prod_result;
  } // method to multiply the binaries
 
-  public static long divideBinary(long binOne, long binTwo, int i, int rem) {
-    int quo =0;
-    while (binOne <= binTwo && binOne > 0){
-          binOne <<=1;
-          i++;
-      }
-    while (i -- > 0){
-      binOne >> = 1;
-        if( binOne <= binTwo){
-            binTwo -= binOne;
-            quo = (quo << 1) + 1;
-          }
-          else quo <<= 1;
-        }
-      return quo;
-  }  // method to divide the binaries
+  public static long divideBinary(long a, long b) {
+    System.out.println(a + "first val :" + b);
+       int a1 = (int) a;
+       int b1 = (int) b;
+       String s1 = Integer.toString(a1);
+       String s2 = Integer.toString(b1);
+       int number0 = Integer.parseInt(s1, 2);
+       int number1 = Integer.parseInt(s2, 2);
 
+       int sum = number0 / number1;
+       String quo = Integer.toBinaryString(sum);
+
+       return quo;
+  }  // method to divide the binaries
+  public static void main(String [] args){
+
+    Scanner scan = new Scanner(System.in); // creaters new scannerm
+    System.out.print
+    System.out.println("Please input first binary number:"); //Scanner to get first binary number
+    long binOne = scan.nextLong(); //scans for next int
+    System.out.println("Please input second binary number:");//Scanner to get second binary number
+    long binTwo = scan.nextLong(); //scans for next int
     System.out.println("Choose (add, subtract, multiply, divide)"); //Scanner to get the arithmetic function wanted
     String atith = scan.nextLine();
 
