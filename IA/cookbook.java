@@ -3,6 +3,7 @@ import java.lang.*;
 
 public class cookbook{
 // how do I put all of these arrays into one array of recipes?
+public static void main(String[] args){
   String[] master =  new String[4];
 
   public ArrayList<String> recipeName = new ArrayList<String>(); //what it is called
@@ -15,31 +16,47 @@ public class cookbook{
   master [2] = ingredients; //stores the I into position 2
   master [3] = directions; // stores the d into position 3
 
-public void setRecipeName(ArrayList<String> recipeName){
-  this.recipeName = recipeName;
+
+public String searchTime(){
+  System.out.println("Please enter the timePrep");
+  Scanner scanscan3 = new Scanner(System.in);
+  String time = scan.nextLine();
+  for(int i= 0; i < timePrep.size(); i++){  // search master [2] for ingredient
+  if(time.equals(timePrep.get(i).getTimePrep()){ // find what row position ingredient is in
+    return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
 }
-public void setTimePrep(ArrayList<Int> timePrep){
-  this.timePrep = timePrep;
+else
+  System.out.println("No recipe has a time prep of " + time + ".")
 }
-public void setIngredients(ArrayList<String> ingredients){
-  this.ingredients = ingredients;
 }
-public void setDirections(ArrayList<String> directions){
-  this.directions = directions;
+
+public String searchName(){
+  System.out.println("Please enter the recipe name.");
+  Scanner scan1 = new Scanner(System.in);
+  String name = scanscan1.nextLine();
+  for(int i= 0; i < recipeName.size(); i++){  // search master [0] for name
+  if(name.equals(recipeName.get(i).getRecipeName()){ // find what row position name is in
+    return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
+  }
+  else
+  System.out.println(name + " is not in the cookbook");
 }
-public String getRecipeName(int i){
-  return recipeName.get(i);
 }
-public String getTimePrep(int i){
-  return timePrep.get(i);
+
+public String searchIngredients(){
+  System.out.println("Please enter the ingredient");
+  Scanner scanscan2 = new Scanner(System.in);
+  String userIngredients = scan.nextLine();
+
+  for(int i= 0; i < ingredients.size(); i++){  // search master [0] for name
+  if(userIngredients.equals(ingredients.get(i).getRecipeName()){ // find what row position name is in
+    return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
+  }
+  else
+  System.out.println("No recipe has " + userIngredients + "."); 
 }
-public String getIngredients(int i){
-  return ingredients.get(i);
 }
-public String getDirections(int i){
-  return directions.get(i);
-}
-public static void main(String[] args){
+
   System.out.println("Hungry? \n Would you like to: Enter \"Add new recipe\" or \"Find a recipe\" ." );
   Scanner scan = new Scanner(System.in);
   String cat = scan.nextLine(); //cat represents what the user enters
@@ -70,33 +87,21 @@ public static void main(String[] args){
       System.out.println("Please enter the name of the recipe");
       Scanner scanscan1 = new Scanner(System.in);
       String name = scan.nextLine();
-      // search master [0] for name
-      // find what row position name is in
-      // return the all columns with the row position found
+
       return ("x"); // this is a filler to compile code FIX
     }
     if(dog.equals("search by time prep")){
-      System.out.println("Please enter the time prep");
-      Scanner scanscan2 = new Scanner(System.in);
-      String time = scan.nextLine();
-      // search master [1] for time
-      // find what row position time is in
-      // return all the columns with the row position found
-      return ("x"); // this is a filler to compile code FIX
+      System.out.println("The recipe you are looking for is " + searchName "." );
+
     }
     if (dog.equals("search by ingredients")){
       System.out.println("Please enter the ingredient");
       Scanner scanscan3 = new Scanner(System.in);
       String userIngredients = scan.nextLine();
-      //this would be cool if I could search for multiple ingredients but IDK how
-      // search master [2] for userIngredients
-      //find what row position userIngredients is in
-      //return all the columns with the row position found
-    return ("x"); // this is a filler to compile code FIX 
+
     }
     }
-return ("grilled cheese, 10 minutes, 1 piece of cheese and 2 pieces of bread, heat stove and place bread on stove until golden brown flip twice");
+
   }
 
-}
 }
