@@ -2,7 +2,6 @@ import java.util.*;
 import java.lang.*;
 
 public class cookbook{
-// how do I put all of these arrays into one array of recipes?
 public static void main(String[] args){
   String[] master =  new String[4];
 
@@ -16,8 +15,31 @@ public static void main(String[] args){
   master [2] = ingredients; //stores the I into position 2
   master [3] = directions; // stores the d into position 3
 
+  public String addRecipe(){
+    System.out.println("Please enter the recipe name.");
+    Scanner scan2 = new Scanner(System.in);
+    String newName = scan2.nextLine();
+    recipeName.add(newName);
 
-public String searchTime(){
+    System.out.println("Please enter the time prep.");
+    Scanner scan3 = new Scanner(System.in);
+    String newTime = scan3.nextLine();
+    timePrep.add(newTime);
+
+    System.out.println("Please enter the ingredient list." );
+    Scanner scan4 = new Scanner(System.in);
+    String newI = scan4.nextLine();
+    ingredients.add(newI);
+
+    System.out.println("Please enter the directions.");
+    Scanner scan5 = new Scanner(System.in);
+    String newD = scan5.nextLine();
+    directions.add(newD);
+
+    System.out.println("New recipe has been added.");
+  }
+
+  public String searchTime(){
   System.out.println("Please enter the timePrep");
   Scanner scanscan3 = new Scanner(System.in);
   String time = scan.nextLine();
@@ -53,7 +75,7 @@ public String searchIngredients(){
     return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
   }
   else
-  System.out.println("No recipe has " + userIngredients + "."); 
+  System.out.println("No recipe has " + userIngredients + ".");
 }
 }
 
@@ -64,21 +86,24 @@ public String searchIngredients(){
   if(cat.equals("Add new recipe")){
     System.out.println("Please enter the recipe name.");
     Scanner scan2 = new Scanner(System.in);
-    String recipeName[i] = scan2.nextLine(); // does saying [i] make it all the same position
+    String newName = scan2.nextLine();
 
     System.out.println("Please enter the time prep.");
     Scanner scan3 = new Scanner(System.in);
-    String timePrep[i] = scan3.nextLine();
+    String newTime = scan3.nextLine();
 
     System.out.println("Please enter the ingredient list." );
     Scanner scan4 = new Scanner(System.in);
-    String ingredients[i] = scan4.nextLine();
+    String newI = scan4.nextLine();
 
     System.out.println("Please enter the directions.");
     Scanner scan5 = new Scanner(System.in);
-    String directions[i] = scan5.nextLine();
+    String newD = scan5.nextLine();
+
+
+    return (System.out.println("New recipe has been added.")); 
   }
-  if(cat.equals("Find a recipe")){
+  else if(cat.equals("Find a recipe")){
     System.out.println(" \n Would you like to: Enter \"search by recipe name\" or \"search by time prep\" or \"search by ingredients\" ? ");
     Scanner scanscan = new Scanner(System.in);
     String dog = scan.nextLine(); // dog represents what they are searching by
