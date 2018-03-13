@@ -6,7 +6,7 @@ public static void main(String[] args){
   String[] master =  new String[4];
 
   public ArrayList<String> recipeName = new ArrayList<String>(); //what it is called
-  public ArrayList<String> timePrep = new ArrayList<Int>(); //integer in minutes
+  public ArrayList<Int> timePrep = new ArrayList<Int>(); //integer in minutes
   public ArrayList<String> ingredients = new ArrayList<String>(); //what you need
   public ArrayList<String> directions = new ArrayList<String>(); //what you need to do
 
@@ -15,36 +15,85 @@ public static void main(String[] args){
   master [2] = ingredients; //stores the I into position 2
   master [3] = directions; // stores the d into position 3
 
+  recipeName.add("hard boiled egg");
+  timePrep.add(10);
+  ingredients.add("One egg, water" );
+  directions.add("boil water, place in egg, leave for five minutes");
+
+  recipeName.add("grilled cheese");
+  timePrep.add(15);
+  ingredients.add("two pieces of bread, one slice of cheese, 1oz butter" );
+  directions.add("place butter in pan, place one slice of bread in pan, place cheese on bread and add next piece of bread on top, flip after golden brown, flip again after golden brown, remove after cheese has melted");
+
+  recipeName.add("mac and cheese");
+  timePrep.add(55);
+  ingredients.add("4 cups dried macaroni, 1 whole egg, 1/2 stick (4 tablespoons) butter, 1/4 cup all-purpose flour, 2 1/2 cups whole milk, 2 heaping teaspoons dry mustard (more if desired), 1 pound sharp Cheddar, grated (not pre-grated cheese), plus more for baking, Salt" );
+  directions.add("Preheat the oven to 350 degrees F., Cook the macaroni until still slightly firm. Drain and set aside., In a small bowl, beat the egg. In a large pot, melt the butter and sprinkle in the flour. Whisk together over medium-low heat. Cook for a couple of minutes, whisking constantly. Don't let it burn. Pour in the milk, add the mustard and whisk until smooth. Cook until very thick, about 5 minutes. Reduce the heat to low., Take 1/4 cup of the sauce and slowly pour it into the beaten egg, whisking constantly to avoid cooking the eggs. Whisk together until smooth. Pour the egg into the sauce, whisking constantly. Stir until smooth. Add in the cheese and stir to melt. Add 1/2 teaspoon salt, 1/2 teaspoon seasoned salt and the pepper. Add any additional spices if desired. Taste the sauce and add more salt and seasoned salt as needed! DO NOT UNDERSALT., Pour in the drained, cooked macaroni and stir to combine. Serve immediately (while it's still very creamy) or pour into a buttered baking dish, top with extra cheese and bake until bubbly and golden on top, 20 to 25 minutes.");
+
+  recipeName.add("Mushroom Stroganoff");
+  timePrep.add(30);
+  ingredients.add("2 tablespoons olive oil, divided
+1 medium yellow onion, diced
+12 oz (340 g) cremini mushroom, sliced
+3 cloves garlic
+½ teaspoon dried thyme
+¼ teaspoon pepper
+½ teaspoon salt
+¼ cup (60 mL) dry white wine
+½ tablespoon vegan worcestershire
+¼ cup (30 g) flour
+2 cups (480 mL) vegetable broth
+1 ½ cups (360 mL) almond milk
+8 oz (225 g) fusilli pasta, uncooked
+fresh parsley, chopped, for serving, garnish" );
+  directions.add("In a large pot, heat 1 tablespoon of olive oil over medium heat. Once the oil begins to shimmer, add the onion and cook for 3-4 minutes, until semi-translucent.
+Add the mushrooms and cook until most of the juices have evaporated.
+With your spoon, make a space in the center of the pot. Drizzle in the remaining tablespoon of olive oil and add the garlic, thyme, pepper, and salt.
+Cook for 2-3 minutes, until fragrant. Then, add the white wine and vegan Worcestershire sauce and stir until incorporated.
+Add flour and stir until fully combined. Then add the vegetable broth, almond milk, and pasta, and stir until well-combined.
+Cover and increase the heat to medium-high. Let cook for 10-15 minutes, or until the liquid is creamy and pasta is cooked.
+Serve immediately, garnished with parsley.");
+
+recipeName.add("One-Pot Bacon And Wild Mushroom Risotto");
+timePrep.add(50);
+ingredients.add("3 tablespoons olive oil
+1 medium onion, sliced
+5 strips bacon, diced
+8 oz (225 g) wild mushrooms, such as porcini or shiitake, sliced
+1 ½ cups (300 g) arborio rice
+½ cup (120 mL) dry white wine, such as Sauvignon Blanc
+5 cups (1.17 L) chicken broth
+½ cup (55 g) parmesan cheese, plus more for garnish" );
+directions.add("In a 5-quart Dutch oven, heat the olive oil over medium heat.
+Add the onion and cook 3-4 minutes until soft and slightly transparent.
+Add the bacon and stir constantly until it starts to crisp.
+Add the mushrooms and cook for an additional 2 minutes.
+Add the arborio rice and cook for one minute, stirring constantly so the oil coats the grains.
+Stir in the white wine and simmer 2-3 minutes, stirring occasionally.
+Add one cup (235ml) of the chicken stock and simmer over medium heat for about 5 minutes, stirring occasionally.
+Once the rice absorbs most of the liquid, continue to add 1-2 cups (235-470ml) of stock at a time until the liquid is absorbed and the rice is cooked through, about 25-30 minutes total.
+NOTE: The risotto should be al dente and fall back in on itself when you run the spoon along the bottom of the pot.
+Stir in the Parmesan cheese and remove from the heat.
+Serve and garnish with extra Parmesan cheese.");
+
+
   public String addRecipe(){
-    System.out.println("Please enter the recipe name.");
-    Scanner scan2 = new Scanner(System.in);
-    String newName = scan2.nextLine();
+
     recipeName.add(newName);
-
-    System.out.println("Please enter the time prep.");
-    Scanner scan3 = new Scanner(System.in);
-    String newTime = scan3.nextLine();
     timePrep.add(newTime);
-
-    System.out.println("Please enter the ingredient list." );
-    Scanner scan4 = new Scanner(System.in);
-    String newI = scan4.nextLine();
     ingredients.add(newI);
-
-    System.out.println("Please enter the directions.");
-    Scanner scan5 = new Scanner(System.in);
-    String newD = scan5.nextLine();
     directions.add(newD);
 
-    System.out.println("New recipe has been added.");
   }
 
-  public String searchTime(){
+  //public String removeRecipe
+
+  public int searchTime(){
   System.out.println("Please enter the timePrep");
   Scanner scanscan3 = new Scanner(System.in);
-  String time = scan.nextLine();
+  Int time = scan.nextLine();
   for(int i= 0; i < timePrep.size(); i++){  // search master [2] for ingredient
-  if(time.equals(timePrep.get(i).getTimePrep()){ // find what row position ingredient is in
+  if(time.equals(timePrep.get(i).getTimePrep() || time<timePrep){ // find what row position ingredient is in
     return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
 }
 else
@@ -57,7 +106,7 @@ public String searchName(){
   Scanner scan1 = new Scanner(System.in);
   String name = scanscan1.nextLine();
   for(int i= 0; i < recipeName.size(); i++){  // search master [0] for name
-  if(name.equals(recipeName.get(i).getRecipeName()){ // find what row position name is in
+  if(name.contains(recipeName.get(i).getRecipeName()){ // find what row position name is in
     return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
   }
   else
@@ -71,7 +120,7 @@ public String searchIngredients(){
   String userIngredients = scan.nextLine();
 
   for(int i= 0; i < ingredients.size(); i++){  // search master [0] for name
-  if(userIngredients.equals(ingredients.get(i).getRecipeName()){ // find what row position name is in
+  if(userIngredients.contains(ingredients.get(i).getRecipeName()){ // find what row position name is in
     return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
   }
   else
@@ -90,7 +139,7 @@ public String searchIngredients(){
 
     System.out.println("Please enter the time prep.");
     Scanner scan3 = new Scanner(System.in);
-    String newTime = scan3.nextLine();
+    Int newTime = scan3.nextLine();
 
     System.out.println("Please enter the ingredient list." );
     Scanner scan4 = new Scanner(System.in);
@@ -101,7 +150,7 @@ public String searchIngredients(){
     String newD = scan5.nextLine();
 
 
-    return (System.out.println("New recipe has been added.")); 
+    return (System.out.println("New recipe has been added."));
   }
   else if(cat.equals("Find a recipe")){
     System.out.println(" \n Would you like to: Enter \"search by recipe name\" or \"search by time prep\" or \"search by ingredients\" ? ");
