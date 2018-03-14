@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.Frame;
 //I need to figure out how to add a text field
-//I also need to make the textfields objects that I can use in my class 
+//I also need to make the textfields objects that I can use in my class
 public class cookbookFrame extends Frame implements ActionListener{
   public static void main (String[] args){
   JFrame frame = new JFrame ("Welcome cookbook");
@@ -55,6 +55,9 @@ static class Action11 implements ActionListener {
       JTextField nameInput = new JTextField;
       nameInput.setSize(300,50);
       add (nameInput);
+      Button ent = new JButton("Enter"); //button to enter
+      pan1.add(ent);
+      ent.addActionListener (new Action002());
     }
 static class Action22 implements ActionListener {
     public void actionPerformed(ActionEvent e){
@@ -68,6 +71,9 @@ static class Action22 implements ActionListener {
         JTextField oInput = new JTextField;
         oInput.setSize(300,50);
         add (oInput);
+        Button ent = new JButton("Enter"); //button to enter
+        pan1.add(ent);
+        ent.addActionListener (new Action02());
       }
 static class Action33 implements ActionListener {
     public void actionPerformed(ActionEvent e){
@@ -80,7 +86,10 @@ static class Action33 implements ActionListener {
           pan1.add(lab);
           JTextField aInput = new JTextField;
           aInput.setSize(300,50);
-          add (aInput);
+          pan1.add (aInput);
+          Button ent = new JButton("Enter"); //button to enter
+          pan1.add(ent);
+          ent.addActionListener (new Action001());
         }
   }
 static class Action2 implements ActionListener {
@@ -105,6 +114,9 @@ static class Action2 implements ActionListener {
     TextField aInput = new TextField;
     aInput.setSize(300,50);
     add (aInput);
+    Button ent = new JButton("Enter"); //button to enter
+    pan.add(ent);
+    ent.addActionListener (new Action01());
   }
 }
 }
