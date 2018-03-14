@@ -2,7 +2,8 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Frame;
-
+//I need to figure out how to add a text field
+//I also need to make the textfields objects that I can use in my class 
 public class cookbookFrame extends Frame implements ActionListener{
   public static void main (String[] args){
   JFrame frame = new JFrame ("Welcome cookbook");
@@ -91,16 +92,17 @@ static class Action2 implements ActionListener {
     JPanel pan = new JPanel();
     FR2.add(pan);
     pan.add(lab);
-    JTextField aaInput = new JTextField;
+     JTextfield aaInput = new JTextField;
     aaInput.setSize(300,50);
+    pan.add(aaInput);
     add (aaInput);
-    JTextField bInput = new JTextField;
+    TextField bInput = new TextField;
     bInput.setSize(300,50);
     add (bInput);
-    JTextField cInput = new JTextField;
+    TextField cInput = new TextField;
     cInput.setSize(300,50);
     add (cInput);
-    JTextField aInput = new JTextField;
+    TextField aInput = new TextField;
     aInput.setSize(300,50);
     add (aInput);
   }
