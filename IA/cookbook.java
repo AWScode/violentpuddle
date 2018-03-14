@@ -5,10 +5,17 @@ public class cookbook{
 public static void main(String[] args){
   String[] master =  new String[4];
 
+  /*
   public ArrayList<String> recipeName = new ArrayList<String>(); //what it is called
   public ArrayList<Int> timePrep = new ArrayList<Int>(); //integer in minutes
   public ArrayList<String> ingredients = new ArrayList<String>(); //what you need
   public ArrayList<String> directions = new ArrayList<String>(); //what you need to do
+  */
+
+  ArrayList<String> recipeName = new ArrayList<String>(); //what it is called
+  ArrayList<Int> timePrep = new ArrayList<Int>(); //integer in minutes
+  ArrayList<String> ingredients = new ArrayList<String>(); //what you need
+  ArrayList<String> directions = new ArrayList<String>(); //what you need to do
 
   master [0] = recipeName; // stores the RN into position 0
   master [1] = timePrep;  //stores the TP into position 1
@@ -32,49 +39,13 @@ public static void main(String[] args){
 
   recipeName.add("Mushroom Stroganoff");
   timePrep.add(30);
-  ingredients.add("2 tablespoons olive oil, divided
-1 medium yellow onion, diced
-12 oz (340 g) cremini mushroom, sliced
-3 cloves garlic
-½ teaspoon dried thyme
-¼ teaspoon pepper
-½ teaspoon salt
-¼ cup (60 mL) dry white wine
-½ tablespoon vegan worcestershire
-¼ cup (30 g) flour
-2 cups (480 mL) vegetable broth
-1 ½ cups (360 mL) almond milk
-8 oz (225 g) fusilli pasta, uncooked
-fresh parsley, chopped, for serving, garnish" );
-  directions.add("In a large pot, heat 1 tablespoon of olive oil over medium heat. Once the oil begins to shimmer, add the onion and cook for 3-4 minutes, until semi-translucent.
-Add the mushrooms and cook until most of the juices have evaporated.
-With your spoon, make a space in the center of the pot. Drizzle in the remaining tablespoon of olive oil and add the garlic, thyme, pepper, and salt.
-Cook for 2-3 minutes, until fragrant. Then, add the white wine and vegan Worcestershire sauce and stir until incorporated.
-Add flour and stir until fully combined. Then add the vegetable broth, almond milk, and pasta, and stir until well-combined.
-Cover and increase the heat to medium-high. Let cook for 10-15 minutes, or until the liquid is creamy and pasta is cooked.
-Serve immediately, garnished with parsley.");
+  ingredients.add("2 tablespoons olive oil, divided\n1 medium yellow onion, diced\n12 oz (340 g) cremini mushroom, sliced\n3 cloves garlic\n½ teaspoon dried thyme\n¼ teaspoon pepper\n½ teaspoon salt\n¼ cup (60 mL) dry white wine\n½ tablespoon vegan worcestershire\n¼ cup (30 g) flour\n2 cups (480 mL) vegetable broth\n1 ½ cups (360 mL) almond milk\n8 oz (225 g) fusilli pasta, uncooked fresh parsley, chopped, for serving, garnish" );
+directions.add("In a large pot, heat 1 tablespoon of olive oil over medium heat. Once the oil begins to shimmer, add the onion and cook for 3-4 minutes, until semi-translucent.\nAdd the mushrooms and cook until most of the juices have evaporated.\nWith your spoon, make a space in the center of the pot. Drizzle in the remaining tablespoon of olive oil and add the garlic, thyme, pepper, and salt.\nCook for 2-3 minutes, until fragrant. Then, add the white wine and vegan Worcestershire sauce and stir until incorporated.\nAdd flour and stir until fully combined. Then add the vegetable broth, almond milk, and pasta, and stir until well-combined.\nCover and increase the heat to medium-high. Let cook for 10-15 minutes, or until the liquid is creamy and pasta is cooked.\nServe immediately, garnished with parsley.");
 
 recipeName.add("One-Pot Bacon And Wild Mushroom Risotto");
 timePrep.add(50);
-ingredients.add("3 tablespoons olive oil
-1 medium onion, sliced
-5 strips bacon, diced
-8 oz (225 g) wild mushrooms, such as porcini or shiitake, sliced
-1 ½ cups (300 g) arborio rice
-½ cup (120 mL) dry white wine, such as Sauvignon Blanc
-5 cups (1.17 L) chicken broth
-½ cup (55 g) parmesan cheese, plus more for garnish" );
-directions.add("In a 5-quart Dutch oven, heat the olive oil over medium heat.
-Add the onion and cook 3-4 minutes until soft and slightly transparent.
-Add the bacon and stir constantly until it starts to crisp.
-Add the mushrooms and cook for an additional 2 minutes.
-Add the arborio rice and cook for one minute, stirring constantly so the oil coats the grains.
-Stir in the white wine and simmer 2-3 minutes, stirring occasionally.
-Add one cup (235ml) of the chicken stock and simmer over medium heat for about 5 minutes, stirring occasionally.
-Once the rice absorbs most of the liquid, continue to add 1-2 cups (235-470ml) of stock at a time until the liquid is absorbed and the rice is cooked through, about 25-30 minutes total.
-NOTE: The risotto should be al dente and fall back in on itself when you run the spoon along the bottom of the pot.
-Stir in the Parmesan cheese and remove from the heat.
-Serve and garnish with extra Parmesan cheese.");
+ingredients.add("3 tablespoons olive oil\n1 medium onion, sliced\n5 strips bacon, diced\n8 oz (225 g) wild mushrooms, such as porcini or shiitake, sliced\n1 ½ cups (300 g) arborio rice\n½ cup (120 mL) dry white wine, such as Sauvignon Blanc\n5 cups (1.17 L) chicken broth\n½ cup (55 g) parmesan cheese, plus more for garnish" );
+directions.add("In a 5-quart Dutch oven, heat the olive oil over medium heat.\nAdd the onion and cook 3-4 minutes until soft and slightly transparent.\nAdd the bacon and stir constantly until it starts to crisp.\nAdd the mushrooms and cook for an additional 2 minutes.\nAdd the arborio rice and cook for one minute, stirring constantly so the oil coats the grains.\nStir in the white wine and simmer 2-3 minutes, stirring occasionally.\nAdd one cup (235ml) of the chicken stock and simmer over\nmedium heat for about 5 minutes, stirring occasionally.\nOnce the rice absorbs most of the liquid, continue to add 1-2 cups (235-470ml) of stock at a time until the liquid is absorbed and the rice is cooked through, about 25-30 minutes total.\nNOTE: The risotto should be al dente and fall back in on itself when you run the spoon along the bottom of the pot.\nStir in the Parmesan cheese and remove from the heat.\nServe and garnish with extra Parmesan cheese.");
 
 
   public String addRecipe(){
@@ -94,7 +65,7 @@ Serve and garnish with extra Parmesan cheese.");
   Int time = scan.nextLine();
   for(int i= 0; i < timePrep.size(); i++){  // search master [2] for ingredient
   if(time.equals(timePrep.get(i).getTimePrep() || time<timePrep){ // find what row position ingredient is in
-    return( recipeName[i], timePrep[i], getIngredients[i], getDirections[i]);   // return the all columns with the row position found
+    return( recipeName[i], timePrep[i], ingredients[i], directions[i]);   // return the all columns with the row position found
 }
 else
   System.out.println("No recipe has a time prep of " + time + ".")
