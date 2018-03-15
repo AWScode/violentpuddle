@@ -2,20 +2,20 @@
 
 public class Recipe{
   private String name; // creates name object
-  private int timePrep; //creates the time it takes to cook
+  private String timePrep; //creates the time it takes to cook
   private String ingredients; //creates ingredients object
   private String directions; //creates directions object
 
-public Recipe(String name, int timePrep, String ingredients, String directions){ //contructor
+public Recipe(String name, String timePrep, String ingredients, String directions){ //contructor
   this.name = name;
   this.timePrep = timePrep;
   this.ingredients = ingredients;
   this.directions = directions;
 }
 public void setName(String name){
-  this.recipeName = Name; //sets name
+  this.name = name; //sets name
 }
-public void setTimePrep(Int timePrep){
+public void setTimePrep(String timePrep){
   this.timePrep = timePrep; //sets timePrep
 }
 public void setIngredients(String ingredients){
@@ -27,7 +27,7 @@ public void setDirections(String directions){
 public String getName(){
   return name;
 }
-public Int getTimePrep(){
+public String getTimePrep(){
   return timePrep;
 }
 public String getIngredients(){
